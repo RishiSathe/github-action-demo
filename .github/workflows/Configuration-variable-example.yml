@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Configuration-variable-example
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+env:
+  cloud: google-cloud
+  
+jobs:
+  greeting_job:
+     runs-on: ubuntu-latest
+     env:
+        Greeting: Hello
+    # Steps represent a sequence of tasks that will be executed as part of the job
+     steps:
+        - name: Greeting and printing configuration variable
+          run: echo "$Greeting $First_Name is using $cloud with project-ID ${{vars.PROJECT_ID}}"
+
+          env:
+            FIRST_NAME: John
+  
+      
