@@ -25,10 +25,10 @@ jobs:
     steps:
       - name: add numbers
         id: sum
-        run: echo "::set-output name=sum::$((${{input.number1}} + ${{input.number2}}))"
+        run: echo "::set-output name=sum::$((${{inputs.number1}} + ${{inputs.number2}}))"
 
       - name: Display sum
-        run: echo "The sum of ${{input.number1}} and ${{input.number2}} is ${{steps.sum.outpus.sum}}"
+        run: echo "The sum of ${{inputs.number1}} and ${{inputs.number2}} is ${{steps.sum.outpus.sum}}"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
