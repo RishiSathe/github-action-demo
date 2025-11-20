@@ -28,3 +28,17 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo ******DEMO********
+
+      # Step 1: Use an action
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Run a shell command
+      - name: Print a message
+        run: echo "Hello from GitHub Actions!"
+
+      # Step 3: Run multiple commands
+      - name: Run multiple commands
+        run: |
+          echo "First line"
+          echo "Second line"
